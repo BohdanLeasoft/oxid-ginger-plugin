@@ -1,0 +1,25 @@
+{
+  "name": "ginger-payments/ginger-oxid",
+  "description": "Ginger Payments Payment Module for Oxid",
+  "type": "oxideshop-module",
+  "keywords": ["oxid", "modules", "eShop", "Ginger"],
+  "homepage": "https://merchant.dev.gingerpayments.com/",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "gingerpayments/ginger-php": "^2.2"
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "gingerpayments/payments"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "GingerPayments\\Payments\\": "./"
+    }
+  }
+}
