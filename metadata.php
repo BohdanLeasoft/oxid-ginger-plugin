@@ -29,11 +29,22 @@ $aModule = [
     'extend' => [
         \OxidEsales\Eshop\Application\Model\Order::class => \GingerPayments\Order\ModuleOrder::class,
         \OxidEsales\Eshop\Application\Controller\PaymentController::class => \GingerPayments\Controller\ModulePaymentController::class,
+        \OxidEsales\Eshop\Application\Model\PaymentGateway::class => \GingerPayments\Model\PaymentGateway::class,
     ],
     'controllers' => [
         'ModuleSettings' => \GingerPayments\Controller\ModuleSettingsController::class,
     ],
     'templates' => [
         'ginger_payments_module_settings.tpl' => 'ginger_payments_module/views/admin/ginger_payments_module_settings.tpl',
+    ],
+    'blocks'      => array(
+        array(
+            'template' => 'page/checkout/payment.tpl',
+            'block'    => 'select_payment',
+            'file'     => '/views/blocks/page/checkout/gingerpayments.tpl'
+        ),
+    ),
+    'events'        => [
+        'onActivate' => \GingerPayments\Core\Events::class.'::onActivate',
     ],
 ];

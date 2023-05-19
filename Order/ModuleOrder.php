@@ -2,7 +2,7 @@
 
 namespace GingerPayments\Order;
 
-class ModuleOrder
+class ModuleOrder extends Order_parent
 {
 
 }
